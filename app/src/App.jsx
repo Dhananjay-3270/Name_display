@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState({ "First name": "", "Last name": "" });
+  const [fullname, setFullname] = useState({ "Full name": "" });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const handleinput = (event) => {
+    const { name, value } = event.target;
+
+    setData((prevdata) => ({ ...prevdata, [name]: value }));
+    console.log(data);
+  };
+
+  const handlesubmit = (event) => {
+    event.preventDefault();
+    setFullname({ "Full name": data["First name"] + data["Last name"] });
+    setData({ "First name": "", "Last name": "" });
+    setIsSubmitted(true);
+    console.log(fullname);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form>
+        <h1>Full Name Display</h1>
+        <h4>First Name</h4>
+        <input type="text" name="First name" onChange={handleinput} required />
+        <h4>Last Name</h4>
+        <input type="text" name="Last name" onChange={handleinput} required />
+        <button onClick={handlesubmit}>Submit</button>
+        {isSubmitted && (
+          <div>
+            <p>Full Name:</p>
+         <span>{fullname["Full name"]}</span>  
+          </div>
+        )}
+      </form>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
