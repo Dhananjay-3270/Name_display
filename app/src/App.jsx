@@ -30,8 +30,8 @@ function App() {
         <button type="submit" onClick={handlesubmit} disabled={!  data["First name"]||!data["Last name"]}>Submit</button>
         {isSubmitted && (
           <div>
-            <p>Full Name:</p>
-         <span>{fullname["Full name"]}</span>  
+            <p>Full Name:   <span>{fullname["Full name"]}</span>  </p>
+      
           </div>
         )}
       </form>
