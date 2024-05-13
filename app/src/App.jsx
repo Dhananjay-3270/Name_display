@@ -27,7 +27,7 @@ function App() {
         <input type="text" name="First name" onChange={handleinput} required />
         <h4>Last Name</h4>
         <input type="text" name="Last name" onChange={handleinput} required />
-        <button onClick={handlesubmit}>Submit</button>
+        <button type="submit" onClick={handlesubmit} disabled={!  data["First name"]||!data["Last name"]}>Submit</button>
         {isSubmitted && (
           <div>
             <p>Full Name:</p>
