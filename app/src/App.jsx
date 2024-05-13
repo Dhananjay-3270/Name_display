@@ -13,7 +13,7 @@ function App() {
 
   const handlesubmit = (event) => {
     event.preventDefault();
-    setFullname({ "Full name": data["First name"] + data["Last name"] });
+    setFullname({ "Full name": data["First name"] + " " + data["Last name"] });
     setData({ "First name": "", "Last name": "" });
     setIsSubmitted(true);
     console.log(fullname);
@@ -30,7 +30,7 @@ function App() {
         <button type="submit" onClick={handlesubmit} disabled={!  data["First name"]||!data["Last name"]}>Submit</button>
         {isSubmitted && (
           <div>
-            <p>full name:</p>
+            <p>Full Name:</p>
          <span>{fullname["Full name"]}</span>  
           </div>
         )}
