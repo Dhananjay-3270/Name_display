@@ -37,14 +37,14 @@ function App() {
      
       </form>
     
-      <div>{(isSubmitted  ) &&  (
+      {(isSubmitted  ) &&  (
           <div>
-            Full Name: {fullname["Full name"]}
+            Full Name:{fullname["Full name"]}
       
           </div>
          
         ) }
-        </div>
+      
     </>
   );
 }
