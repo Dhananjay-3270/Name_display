@@ -29,9 +29,9 @@ function App() {
       <form>
         <h1>Full Name Display</h1>
         <h4>First Name</h4>
-        <input  name="First name" onChange={handleinput} required  />
+        <input type="text" name="First name" onChange={handleinput} required  />
         <h4>Last Name</h4>
-        <input name="Last name" onChange={handleinput} required  />
+        <input type="text" name="Last name" onChange={handleinput} required  />
         <br/>
         <button type="submit" onClick={handlesubmit} >Submit</button>
      
