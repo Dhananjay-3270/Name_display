@@ -36,12 +36,15 @@ function App() {
         <button type="submit" onClick={handlesubmit} >Submit</button>
      
       </form>
-      {(isSubmitted  ) &&  (
+      {
+      <div>(isSubmitted  ) &&  (
           <div>
-            Full Name:{fullname["Full name"]}
+            Full Name: {fullname["Full name"]}
       
           </div>
-        )}
+         
+        ) 
+        </div>}
     </>
   );
 }
