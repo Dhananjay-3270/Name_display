@@ -12,10 +12,15 @@ function App() {
   };
 
   const handlesubmit = (event) => {
+
     event.preventDefault();
-    setFullname({ "Full name": data["First name"] + " " + data["Last name"] });
+    
+    if((data["First name"].length>0 )&&  (data["Last name"].length>0))
+      {
+        setFullname({ "Full name": data["First name"] + " " + data["Last name"] });
     setData({ "First name": "", "Last name": "" });
     setIsSubmitted(true);
+      }
     console.log(fullname);
   };
 
@@ -31,7 +36,7 @@ function App() {
         <button type="submit" onClick={handlesubmit} >Submit</button>
      
       </form>
-      {(isSubmitted && data ) &&  (
+      {(isSubmitted  ) &&  (
           <div>
             <p>Full Name:<span>{fullname["Full name"]}</span>  </p>
       
