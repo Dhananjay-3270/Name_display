@@ -39,7 +39,7 @@ function App() {
     
       {(isSubmitted  ) &&  (
           <div>
-            Full Name:{fullname["Full name"]}
+            Full Name: {fullname["Full name"]}
       
           </div>
          
