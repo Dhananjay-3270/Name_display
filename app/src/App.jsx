@@ -29,13 +29,14 @@ function App() {
         <input name="Last name" onChange={handleinput} required  />
         <br/>
         <button type="submit" onClick={handlesubmit} >Submit</button>
-        {isSubmitted && (
+     
+      </form>
+      {(isSubmitted && data ) &&  (
           <div>
             <p>Full Name:<span>{fullname["Full name"]}</span>  </p>
       
           </div>
         )}
-      </form>
     </>
   );
 }
